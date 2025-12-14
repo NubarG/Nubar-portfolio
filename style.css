@@ -66,3 +66,24 @@ footer {
 .footer-content a:hover {
     color: #38bdf8;
 }
+.project-card {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #1e1e1e; /* Slightly lighter background for the card */
+    border-radius: 8px;
+    border: 1px solid #282828;
+    text-align: right;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: #38bdf8; /* Use accent color for project titles */
+}
+
+.project-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px 0;
+    border-radius: 4px;
+}
