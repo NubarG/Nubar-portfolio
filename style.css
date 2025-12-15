@@ -19,6 +19,12 @@ a:hover {
     color: #a5f3fc;
 }
 
+/* Icon Styling */
+a i {
+    margin-right: 6px;
+    font-size: 0.9em;
+}
+
 /* --- Header/Navigation Bar Styling --- */
 .navbar {
     text-align: center; /* This centers the inline links */
@@ -35,6 +41,10 @@ a:hover {
 
 .navbar a:hover {
     color: #38bdf8;
+}
+
+.navbar a i {
+    margin-right: 8px;
 }
 
 /* --- Main Content Layout --- */
@@ -66,6 +76,20 @@ footer {
 .footer-content a:hover {
     color: #38bdf8;
 }
+
+/* Social Links Styling */
+.social-links {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.social-links a {
+    margin: 0 8px;
+}
+
+.social-links a i {
+    margin-right: 6px;
+}
 .project-card {
     margin-bottom: 40px;
     padding: 20px;
@@ -86,4 +110,41 @@ footer {
     display: block;
     margin: 15px 0;
     border-radius: 4px;
+}
+/* --- Step 6: Responsive Design (Media Queries) --- */
+
+/* This CSS block applies ONLY when the screen is 768px wide or smaller (e.g., tablets/phones) */
+@media (max-width: 768px) {
+    
+    /* Make the content container fill more of the screen space on small devices */
+    .content-container {
+        padding: 0 15px; /* Less horizontal padding */
+        max-width: 100%; /* Use full width */
+    }
+
+    /* Make the main headings slightly smaller */
+    h1 {
+        font-size: 2em;
+    }
+
+    /* Stack navigation links vertically instead of horizontally */
+    .navbar {
+        padding: 10px 0; /* Less padding above/below nav */
+    }
+
+    .navbar a {
+        display: block; /* Forces each link onto its own line */
+        margin: 10px 0; /* Adds vertical space between links */
+    }
+
+    /* Shrink the profile photo slightly for phone view */
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Shrink project card padding to use space better */
+    .project-card {
+        padding: 15px;
+    }
 }
