@@ -7,6 +7,56 @@ body {
     line-height: 1.6;
     scroll-behavior: smooth;
 }
+/* --- Flexbox for Side-by-Side Layout on Home Page --- */
+.profile-content {
+    display: flex; /* Activates Flexbox */
+    align-items: flex-start; /* Aligns items to the top (photo and text) */
+    gap: 30px; /* Adds space between the photo and the text */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* --- Profile Photo Styling --- */
+.profile-photo-container {
+    flex-shrink: 0; /* Prevents the photo from shrinking */
+}
+
+.profile-photo {
+    /* Define the size and shape */
+    width: 150px;
+    height: 150px;
+    object-fit: cover;      /* Ensures the image fills the circle without stretching */
+    border-radius: 50%;     /* Makes the photo perfectly circular */
+    border: 3px solid #38bdf8; /* Blue accent border */
+    display: block;         /* Ensures it respects margin/alignment properties */
+}
+.project-photo-container {
+    flex-shrink: 0; /* Prevents the photo from shrinking */
+}
+
+.profile-text-block {
+    /* Allows the text block to take up the remaining space */
+    flex: 1; 
+}
+
+.summary-text {
+    text-align: left; /* Left-align the text content */
+    margin: 0 0 15px 0; /* Add bottom margin for spacing before social links */
+}
+
+.profile-photo-container {
+    flex-shrink: 0; /* Prevents the photo from shrinking */
+}
+
+.project-image {
+ /* Define the size and shape */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;      /* Ensures the image fills the circle without stretching */
+    border-radius: 50%;     /* Makes the photo perfectly circular */
+    border: 3px solid #38bdf8; /* Blue accent border */
+    display: block;         /* Ensures it respects margin/alignment properties */
+}
 
 /* Base Link Styling */
 a {
@@ -79,7 +129,7 @@ footer {
 
 /* Social Links Styling */
 .social-links {
-    text-align: center;
+    text-align: left;
     margin: 20px 0;
 }
 
@@ -96,7 +146,7 @@ footer {
     background-color: #1e1e1e; /* Slightly lighter background for the card */
     border-radius: 8px;
     border: 1px solid #282828;
-    text-align: right;
+    text-align: left;
 }
 
 .project-card h3 {
@@ -104,13 +154,21 @@ footer {
     color: #38bdf8; /* Use accent color for project titles */
 }
 
-.project-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 15px 0;
-    border-radius: 4px;
+.project-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    margin-top: 15px;
 }
+
+.project-text-block {
+    flex: 1;
+}
+
+.project-description {
+    margin: 0;
+}
+
 /* --- Step 6: Responsive Design (Media Queries) --- */
 
 /* This CSS block applies ONLY when the screen is 768px wide or smaller (e.g., tablets/phones) */
@@ -137,10 +195,45 @@ footer {
         margin: 10px 0; /* Adds vertical space between links */
     }
 
+    /* Stack profile photo and text vertically on small screens */
+    .profile-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items when stacked */
+    }
+
+    /* Stack project photo and text vertically on small screens */
+    .project-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .project-card {
+        text-align: center;
+    }
+
+    .project-image {
+        width: 140px;
+        height: 140px;
+    }
+
     /* Shrink the profile photo slightly for phone view */
     .profile-photo {
-        width: 100px;
+        width: 100px; /* Reduced size for small screens */
         height: 100px;
+    }
+
+    /* Center text on mobile */
+    .profile-text-block {
+        text-align: center;
+    }
+
+    .summary-text {
+        text-align: center;
+    }
+
+    .social-links {
+        text-align: center;
     }
 
     /* Shrink project card padding to use space better */
